@@ -26,13 +26,16 @@ steps:
     version: 6.0.x
 
 
+# - task: VSBuild@1
+#   inputs:
+#    solution: '$(solution)'
+#    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
+
 - task: VSBuild@1
   inputs:
-   solution: '$(solution)'
-   msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-   platform: '$(buildPlatform)'
-   configuration: '$(buildConfiguration)'
-
+    solution: '**\*.sln'
 
 
 - task: VSTest@2
