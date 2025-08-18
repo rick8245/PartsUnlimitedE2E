@@ -8,7 +8,7 @@ trigger:
 
 # PartsUnlimited_E2E is designed for VS2017-win2016
 pool:
-  vmImage: 'windows-2022'
+  vmImage: 'windows-2019'
 
 variables:
   solution: '**/*.sln'
@@ -23,8 +23,8 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: sdk
-    version: 2.x
-#    installationPath: $(Agent.ToolsDirectory)/dotnet
+    version: 4.5. , 4.6
+
 
 - task: VSBuild@1
   inputs:
