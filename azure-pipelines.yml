@@ -24,7 +24,7 @@ steps:
   inputs:
     packageType: sdk
     version: 2.x
-    installationPath: $(Agent.ToolsDirectory)/dotnet
+#    installationPath: $(Agent.ToolsDirectory)/dotnet
 
 - task: VSBuild@1
   inputs:
