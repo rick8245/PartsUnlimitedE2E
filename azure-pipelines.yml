@@ -6,9 +6,9 @@
 trigger:
 - master
 
-# PartsUnlimited_E2E is designed for VS2017-win2016
+# PartsUnlimited_E2E is designed for vs2017-win2016
 pool:
-  vmImage: 'vs2022-win2019'
+  vmImage: 'vs2017-win2016'
 
 variables:
   solution: '**/*.sln'
