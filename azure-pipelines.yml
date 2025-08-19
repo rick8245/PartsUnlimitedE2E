@@ -24,24 +24,18 @@ steps:
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
 
-- task: NuGetToolInstaller@1
-
 - task: UseDotNet@2
   inputs:
     packageType: sdk
     version: 6.0.x
 
 
-# - task: VSBuild@1
-#   inputs:
-#    solution: '$(solution)'
-#    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
-
 - task: VSBuild@1
   inputs:
-    solution: '**\*.sln'
+   solution: '$(solution)'
+   msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+   platform: '$(buildPlatform)'
+   configuration: '$(buildConfiguration)'
 
 
 - task: VSTest@2
